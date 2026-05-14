@@ -19,6 +19,36 @@ function debounce(fn, wait = 20) {
 }
 
 /* ============================================================
+   THEME TOGGLE — Light / Dark
+============================================================ */
+(function initTheme() {
+    const html        = document.documentElement;
+    const btn         = document.getElementById('themeToggle');
+    const DARK_ICON   = '🌙';
+    const LIGHT_ICON  = '☀️';
+    const STORAGE_KEY = 'ygeia-theme';
+
+    // Read saved preference or default to 'light'
+    const saved = localStorage.getItem(STORAGE_KEY) || 'light';
+    html.setAttribute('data-theme', saved);
+    if (btn) btn.textContent = saved === 'dark' ? DARK_ICON : LIGHT_ICON;
+
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme');
+        const next    = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        btn.textContent = next === 'dark' ? DARK_ICON : LIGHT_ICON;
+        localStorage.setItem(STORAGE_KEY, next);
+
+        // Tiny spin animation on the button
+        btn.style.transform = 'scale(0.8) rotate(180deg)';
+        setTimeout(() => { btn.style.transform = ''; }, 300);
+    });
+})();
+
+/* ============================================================
    NAVBAR — SCROLL EFFECT + MOBILE MENU
 ============================================================ */
 (function initNavbar() {
@@ -161,32 +191,173 @@ function animateCounter(el, target, duration = 1800) {
 })();
 
 /* ============================================================
-   FLIP CARDS — Touch / Click toggle on mobile
+   SERVICE BUBBLES V2 — Carousel + Hover/Tap interaction
 ============================================================ */
-(function initFlipCards() {
-    const cards = document.querySelectorAll('.service-card-flip');
+(function initServiceBubbles() {
+    const track    = document.getElementById('svTrack');
+    const mask     = track ? track.closest('.sv-track-mask') : null;
+    const prevBtn  = document.getElementById('svPrev');
+    const nextBtn  = document.getElementById('svNext');
+    const dotsWrap = document.getElementById('svDots');
 
-    // Detect touch device
-    const isTouch = window.matchMedia('(hover: none)').matches;
+    if (!track || !mask) return;
 
-    if (isTouch) {
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                // Close any other open cards first
-                cards.forEach(other => {
-                    if (other !== card) other.classList.remove('flipped');
-                });
-                card.classList.toggle('flipped');
-            });
-        });
+    const bubbles = [...track.querySelectorAll('.sv-bubble')];
+    const TOTAL   = bubbles.length;
+    let current   = 0;
 
-        // Close on outside tap
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.service-card-flip')) {
-                cards.forEach(c => c.classList.remove('flipped'));
-            }
+    /* --- Detect environment --- */
+    const isTouch  = () => window.matchMedia('(hover: none)').matches;
+    const isMobile = () => window.innerWidth <= 900;
+
+    /* --- Build pagination dots --- */
+    bubbles.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'sv-dot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', `Servicio ${i + 1}`);
+        dot.addEventListener('click', () => goTo(i));
+        dotsWrap.appendChild(dot);
+    });
+
+    /* --- Carousel navigation (desktop only) --- */
+    function getVisibleCount() {
+        // Always show exactly 4 on desktop for the best 4-bubble view
+        if (!isMobile()) return 4;
+        // Mobile: measure how many actually fit
+        const maskW   = mask.offsetWidth || 400;
+        const bubbleW = bubbles[0] ? bubbles[0].offsetWidth : 200;
+        const gap     = parseFloat(getComputedStyle(track).gap) || 32;
+        return Math.max(1, Math.floor((maskW + gap) / (bubbleW + gap)));
+    }
+
+    function goTo(index) {
+        if (isMobile()) return; // mobile uses native scroll-snap
+        const maxIndex = Math.max(0, TOTAL - getVisibleCount());
+        current = Math.max(0, Math.min(index, maxIndex));
+
+        // Measure bubble width + gap from live DOM
+        const bw  = bubbles[0] ? bubbles[0].offsetWidth : 200;
+        const gap = parseFloat(getComputedStyle(track).gap) || 32;
+        track.style.transform = `translateX(-${current * (bw + gap)}px)`;
+
+        updateDots();
+        updateArrows();
+    }
+
+    function updateDots() {
+        [...dotsWrap.children].forEach((d, i) => {
+            d.classList.toggle('active', i === current);
+            d.setAttribute('aria-selected', i === current);
         });
     }
+
+    function updateArrows() {
+        if (prevBtn) prevBtn.disabled = current === 0;
+        if (nextBtn) nextBtn.disabled = current >= TOTAL - getVisibleCount();
+    }
+
+    prevBtn?.addEventListener('click', () => goTo(current - 1));
+    nextBtn?.addEventListener('click', () => goTo(current + 1));
+
+    /* --- Hover (desktop) / Tap (mobile) panel reveal --- */
+    bubbles.forEach(b => {
+        if (!isTouch()) {
+            // Desktop: hover shows panel
+            b.addEventListener('mouseenter', () => {
+                bubbles.forEach(o => o.classList.remove('sv-active'));
+                b.classList.add('sv-active');
+            });
+            b.addEventListener('mouseleave', () => {
+                b.classList.remove('sv-active');
+            });
+        } else {
+            // Mobile: tap toggles panel (accordion style)
+            b.addEventListener('click', (e) => {
+                // Don't close when clicking CTA link
+                if (e.target.closest('.sv-cta')) return;
+                const wasActive = b.classList.contains('sv-active');
+                bubbles.forEach(o => o.classList.remove('sv-active'));
+                if (!wasActive) b.classList.add('sv-active');
+            });
+        }
+    });
+
+    // Tap outside bubble closes all panels (mobile)
+    document.addEventListener('click', (e) => {
+        if (isTouch() && !e.target.closest('.sv-bubble')) {
+            bubbles.forEach(b => b.classList.remove('sv-active'));
+        }
+    });
+
+    /* --- Recalibrate on resize --- */
+    window.addEventListener('resize', debounce(() => {
+        if (!isMobile()) {
+            goTo(current);
+        } else {
+            // Reset JS transform on mobile
+            track.style.transform = '';
+        }
+    }, 200));
+
+    /* --- Init --- */
+    goTo(0);
+})();
+
+/* ============================================================
+   SERVICES PARALLAX — Scroll + Mouse parallax on bg layers
+============================================================ */
+(function initServicesParallax() {
+    const section = document.querySelector('.services-v2');
+    if (!section) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const layers = [
+        { sel: '.sv-bg-canvas', scrollSpeed: 0.05, mouseX: 0.02, mouseY: 0.03 },
+        { sel: '.sv-blob-1',    scrollSpeed: 0.10, mouseX: 0.04, mouseY: 0.06 },
+        { sel: '.sv-blob-2',    scrollSpeed: 0.16, mouseX: 0.07, mouseY: 0.09 },
+        { sel: '.sv-blob-3',    scrollSpeed: 0.12, mouseX: 0.05, mouseY: 0.07 },
+        { sel: '.sv-mesh-a',    scrollSpeed: 0.08, mouseX: 0.09, mouseY: 0.05 },
+        { sel: '.sv-mesh-b',    scrollSpeed: 0.14, mouseX: 0.06, mouseY: 0.10 },
+        { sel: '.sv-mesh-c',    scrollSpeed: 0.18, mouseX: 0.08, mouseY: 0.04 },
+    ].map(cfg => ({ ...cfg, el: section.querySelector(cfg.sel) }))
+     .filter(cfg => cfg.el);
+
+    /* --- Scroll parallax --- */
+    function applyScroll() {
+        const rect     = section.getBoundingClientRect();
+        const viewH    = window.innerHeight;
+        // normalised progress 0→1 as section scrolls through viewport
+        const progress = (viewH - rect.top) / (viewH + rect.height);
+        if (progress < -0.1 || progress > 1.1) return; // skip when off-screen
+
+        layers.forEach(({ el, scrollSpeed }) => {
+            const offset = (progress - 0.5) * 160 * scrollSpeed;
+            el.style.setProperty('--pb-y', `${offset}px`);
+        });
+    }
+
+    /* --- Mouse parallax (desktop only) --- */
+    function applyMouse(e) {
+        if (window.innerWidth <= 900) return;
+        const rect = section.getBoundingClientRect();
+        // Only react when mouse is over the section
+        if (e.clientY < rect.top - 60 || e.clientY > rect.bottom + 60) return;
+
+        const cx = (e.clientX / window.innerWidth  - 0.5) * 60;
+        const cy = (e.clientY / window.innerHeight - 0.5) * 40;
+
+        layers.forEach(({ el, mouseX, mouseY }) => {
+            el.style.setProperty('--pb-x', `${cx * mouseX}px`);
+            // Combine with existing scroll offset, not overwrite:
+            const curY = parseFloat(el.style.getPropertyValue('--pb-y')) || 0;
+            el.style.setProperty('--pb-y', `${curY + cy * mouseY * 0.3}px`);
+        });
+    }
+
+    window.addEventListener('scroll', debounce(applyScroll, 10), { passive: true });
+    document.addEventListener('mousemove', debounce(applyMouse, 16));
+    applyScroll(); // init on load
 })();
 
 /* ============================================================

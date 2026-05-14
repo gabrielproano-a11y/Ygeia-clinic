@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ygeia — Consultorio Médico y Estético de excelencia. Medicina general, tratamientos estéticos avanzados, rejuvenecimiento, sueros, masajes y más. Tu salud y belleza en las mejores manos.">
-    <meta name="keywords" content="consultorio médico estético, ygeia, medicina general, botox, ácido hialurónico, limpieza facial, rejuvenecimiento, masajes, sueros, acné">
+    <meta name="description"
+        content="Ygeia — Consultorio Médico y Estético de excelencia. Medicina general, tratamientos estéticos avanzados, rejuvenecimiento, sueros, masajes y más. Tu salud y belleza en las mejores manos.">
+    <meta name="keywords"
+        content="consultorio médico estético, ygeia, medicina general, botox, ácido hialurónico, limpieza facial, rejuvenecimiento, masajes, sueros, acné">
     <meta property="og:title" content="Ygeia | Salud & Estética Premium">
-    <meta property="og:description" content="Tu bienestar integral comienza aquí. Medicina general y tratamientos estéticos de vanguardia.">
+    <meta property="og:description"
+        content="Tu bienestar integral comienza aquí. Medicina general y tratamientos estéticos de vanguardia.">
     <title>Ygeia | Consultorio Médico & Estético</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- =========================================================
@@ -33,9 +40,11 @@
                 <li><a href="#servicios" class="nav-link">Servicios</a></li>
                 <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
                 <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#cita" class="nav-link">Agendar Cita</a></li>
                 <li><a href="#contacto" class="nav-link">Contacto</a></li>
             </ul>
-            <a href="#contacto" class="btn-primary nav-cta">Reservar Cita</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">&#x1F319;</button>
+            <a href="#cita" class="btn-primary nav-cta">Reservar Cita</a>
             <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú">
                 <span></span><span></span><span></span>
             </button>
@@ -49,8 +58,9 @@
             <li><a href="#servicios" class="mobile-link">Servicios</a></li>
             <li><a href="#nosotros" class="mobile-link">Nosotros</a></li>
             <li><a href="#testimonios" class="mobile-link">Testimonios</a></li>
+            <li><a href="#cita" class="mobile-link">Agendar Cita</a></li>
             <li><a href="#contacto" class="mobile-link">Contacto</a></li>
-            <li><a href="#contacto" class="btn-primary mobile-cta">Reservar Cita</a></li>
+            <li><a href="#cita" class="btn-primary mobile-cta">Reservar Cita</a></li>
         </ul>
     </div>
 
@@ -75,12 +85,16 @@
                     <span class="gradient-text">Merecen lo Mejor</span>
                 </h1>
                 <p class="hero-subtitle animate-fade-up delay-2">
-                    En <strong>Ygeia</strong>, fusionamos la medicina de excelencia con la estética de vanguardia. Porque cuidarte no es un lujo — es una inversión en ti mismo.
+                    En <strong>Ygeia</strong>, fusionamos la medicina de excelencia con la estética de vanguardia.
+                    Porque cuidarte no es un lujo — es una inversión en ti mismo.
                 </p>
                 <div class="hero-ctas animate-scale delay-3">
                     <a href="#contacto" class="btn-primary btn-glow" id="heroCtaMain">
                         Agenda tu Consulta
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                     </a>
                     <a href="#servicios" class="btn-outline" id="heroCtaSecondary">
                         Ver Servicios
@@ -172,173 +186,224 @@
     </section>
 
     <!-- =========================================================
-         SERVICIOS — FLIP CARDS
+         SERVICIOS — GLASS BUBBLES CAROUSEL
     ========================================================= -->
-    <section class="services-section" id="servicios">
+    <section class="services-v2" id="servicios">
+
+        <!-- Fondo orgánico con blobs animados -->
+        <div class="sv-bg">
+            <!-- Mesh gradient canvas (luxury base) -->
+            <div class="sv-bg-canvas"></div>
+            <!-- Bokeh highlight spots -->
+            <div class="sv-mesh sv-mesh-a"></div>
+            <div class="sv-mesh sv-mesh-b"></div>
+            <div class="sv-mesh sv-mesh-c"></div>
+            <!-- Large parallax blobs -->
+            <div class="sv-blob sv-blob-1"></div>
+            <div class="sv-blob sv-blob-2"></div>
+            <div class="sv-blob sv-blob-3"></div>
+        </div>
+
         <div class="container">
-            <div class="section-header reveal-section">
+            <!-- Encabezado -->
+            <div class="section-header sv-header reveal-section">
                 <div class="section-tag">Nuestros Servicios</div>
-                <h2 class="section-title">
+                <h2 class="section-title sv-section-title">
                     Todo lo que tu salud y<br>
                     <span class="gradient-text">tu belleza necesitan</span>
                 </h2>
                 <p class="section-subtitle">
-                    Desde la consulta médica hasta el tratamiento estético más avanzado, en Ygeia encontrarás una solución integral diseñada para ti.
+                    Desde una consulta médica hasta el tratamiento estético más avanzado,
+                    en Ygeia encontrarás una solución integral diseñada para ti.
                 </p>
             </div>
 
-            <div class="services-grid">
+            <!-- Carrusel -->
+            <div class="sv-carousel-wrap">
+                <button class="sv-arrow sv-prev" id="svPrev" aria-label="Anterior servicio">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
 
-                <!-- Card 1: Medicina General & Ocupacional -->
-                <div class="service-card-flip reveal-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <img src="images/service_1.png" alt="Medicina General" class="service-image" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="service-icon-front">🩺</div>
-                                <h3 class="service-title-front">Medicina General & Ocupacional</h3>
-                            </div>
-                        </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back">🩺</div>
-                            <h3 class="service-title-back">Medicina General & Ocupacional</h3>
-                            <p class="service-description">Consultas médicas completas, control preventivo y atención de salud ocupacional para empresas y particulares. Tu bienestar como prioridad.</p>
-                            <div class="service-features">
-                                <span class="feature-tag">Consultas</span>
-                                <span class="feature-tag">Preventiva</span>
-                                <span class="feature-tag">Empresarial</span>
-                            </div>
-                            <a href="#contacto" class="btn-primary btn-sm">Reservar</a>
-                        </div>
-                    </div>
-                </div>
+                <div class="sv-track-mask">
+                    <div class="sv-track" id="svTrack">
 
-                <!-- Card 2: Sueros & Terapia IV -->
-                <div class="service-card-flip reveal-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <img src="images/service_2.png" alt="Sueros y Terapia IV" class="service-image" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="service-icon-front">💉</div>
-                                <h3 class="service-title-front">Sueros & Terapia Intravenosa</h3>
+                        <!-- Burbuja 1: Medicina General -->
+                        <div class="sv-bubble reveal-card" id="svBubble0">
+                            <div class="sv-orbit">
+                                <div class="sv-circle-outer">
+                                    <div class="sv-circle-inner">
+                                        <img src="images/service_1.png" alt="Medicina General" loading="lazy">
+                                    </div>
+                                </div>
+                                <span class="sv-icon">🩺</span>
+                            </div>
+                            <h3 class="sv-name">Medicina General<br><small>& Ocupacional</small></h3>
+                            <div class="sv-panel">
+                                <p class="sv-desc">Consultas médicas completas, control preventivo y atención de salud
+                                    ocupacional. Tu bienestar como prioridad.</p>
+                                <div class="sv-tags">
+                                    <span class="sv-tag">Consultas</span>
+                                    <span class="sv-tag">Preventiva</span>
+                                    <span class="sv-tag">Empresarial</span>
+                                </div>
+                                <a href="#contacto" class="btn-primary btn-sm sv-cta">Agendar cita</a>
                             </div>
                         </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back">💉</div>
-                            <h3 class="service-title-back">Sueros & Terapia Intravenosa</h3>
-                            <p class="service-description">Sueros vitaminados, hidratantes, energizantes, detox y antioxidantes. Recupera tu vitalidad y energía desde adentro con protocolos personalizados.</p>
-                            <div class="service-features">
-                                <span class="feature-tag">Vitaminados</span>
-                                <span class="feature-tag">Detox</span>
-                                <span class="feature-tag">Energía</span>
-                            </div>
-                            <a href="#contacto" class="btn-primary btn-sm">Reservar</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Card 3: Limpieza Facial & Acné -->
-                <div class="service-card-flip reveal-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <img src="images/service_3.png" alt="Limpieza Facial y Acné" class="service-image" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="service-icon-front">🌸</div>
-                                <h3 class="service-title-front">Limpieza Facial & Tratamiento del Acné</h3>
+                        <!-- Burbuja 2: Sueros -->
+                        <div class="sv-bubble reveal-card" id="svBubble1">
+                            <div class="sv-orbit">
+                                <div class="sv-circle-outer">
+                                    <div class="sv-circle-inner">
+                                        <img src="images/service_2.png" alt="Sueros y Terapia IV" loading="lazy">
+                                    </div>
+                                </div>
+                                <span class="sv-icon">💉</span>
+                            </div>
+                            <h3 class="sv-name">Sueros &amp;<br><small>Terapia IV</small></h3>
+                            <div class="sv-panel">
+                                <p class="sv-desc">Sueros vitaminados, hidratantes, detox y antioxidantes. Recupera
+                                    tu vitalidad desde adentro con protocolos personalizados.</p>
+                                <div class="sv-tags">
+                                    <span class="sv-tag">Vitaminados</span>
+                                    <span class="sv-tag">Detox</span>
+                                    <span class="sv-tag">Energía</span>
+                                </div>
+                                <a href="#contacto" class="btn-primary btn-sm sv-cta">Agendar cita</a>
                             </div>
                         </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back">🌸</div>
-                            <h3 class="service-title-back">Limpieza Facial & Tratamiento del Acné</h3>
-                            <p class="service-description">Limpiezas profundas y tratamientos especializados para combatir el acné y sus marcas. Recupera la piel que siempre quisiste con resultados visibles.</p>
-                            <div class="service-features">
-                                <span class="feature-tag">Limpieza Profunda</span>
-                                <span class="feature-tag">Anti-Acné</span>
-                                <span class="feature-tag">Cicatrices</span>
-                            </div>
-                            <a href="#contacto" class="btn-primary btn-sm">Reservar</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Card 4: Retiro Lunares & Aclaramiento -->
-                <div class="service-card-flip reveal-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <img src="images/service_4.png" alt="Retiro de Lunares y Aclaramiento" class="service-image" loading="lazy">
-                            <div class="service-overlay">
-                                <div class="service-icon-front">✨</div>
-                                <h3 class="service-title-front">Retiro de Lunares & Aclaramiento</h3>
+                        <!-- Burbuja 3: Limpieza Facial -->
+                        <div class="sv-bubble reveal-card" id="svBubble2">
+                            <div class="sv-orbit">
+                                <div class="sv-circle-outer">
+                                    <div class="sv-circle-inner">
+                                        <img src="images/service_3.png" alt="Limpieza Facial" loading="lazy">
+                                    </div>
+                                </div>
+                                <span class="sv-icon">🌸</span>
+                            </div>
+                            <h3 class="sv-name">Limpieza Facial<br><small>&amp; Acné</small></h3>
+                            <div class="sv-panel">
+                                <p class="sv-desc">Limpiezas profundas y tratamientos especializados para combatir
+                                    el acné y sus marcas con resultados visibles.</p>
+                                <div class="sv-tags">
+                                    <span class="sv-tag">Limpieza Profunda</span>
+                                    <span class="sv-tag">Anti-Acné</span>
+                                    <span class="sv-tag">Cicatrices</span>
+                                </div>
+                                <a href="#contacto" class="btn-primary btn-sm sv-cta">Agendar cita</a>
                             </div>
                         </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back">✨</div>
-                            <h3 class="service-title-back">Retiro de Lunares & Aclaramiento</h3>
-                            <p class="service-description">Eliminación segura de lunares con técnica médica certificada y tratamientos de aclaramiento para una piel uniforme, radiante y luminosa.</p>
-                            <div class="service-features">
-                                <span class="feature-tag">Retiro Seguro</span>
-                                <span class="feature-tag">Aclaramiento</span>
-                                <span class="feature-tag">Piel Uniforme</span>
-                            </div>
-                            <a href="#contacto" class="btn-primary btn-sm">Reservar</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Card 5: Rejuvenecimiento -->
-                <div class="service-card-flip reveal-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-image service-image-gradient gradient-rejuv">
-                                <div class="gradient-icon">💆</div>
+                        <!-- Burbuja 4: Retiro Lunares -->
+                        <div class="sv-bubble reveal-card" id="svBubble3">
+                            <div class="sv-orbit">
+                                <div class="sv-circle-outer">
+                                    <div class="sv-circle-inner">
+                                        <img src="images/service_4.png" alt="Retiro de Lunares" loading="lazy">
+                                    </div>
+                                </div>
+                                <span class="sv-icon">✨</span>
                             </div>
-                            <div class="service-overlay">
-                                <div class="service-icon-front">💆</div>
-                                <h3 class="service-title-front">Rejuvenecimiento Facial</h3>
+                            <h3 class="sv-name">Retiro de Lunares<br><small>&amp; Aclaramiento</small></h3>
+                            <div class="sv-panel">
+                                <p class="sv-desc">Eliminación segura de lunares con técnica médica certificada y
+                                    tratamientos de aclaramiento para piel uniforme y radiante.</p>
+                                <div class="sv-tags">
+                                    <span class="sv-tag">Retiro Seguro</span>
+                                    <span class="sv-tag">Aclaramiento</span>
+                                    <span class="sv-tag">Piel Uniforme</span>
+                                </div>
+                                <a href="#contacto" class="btn-primary btn-sm sv-cta">Agendar cita</a>
                             </div>
                         </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back">💆</div>
-                            <h3 class="service-title-back">Rejuvenecimiento Facial</h3>
-                            <p class="service-description">Ácido hialurónico, Botox, hilos tensores y lifting facial. Luce más joven de manera natural, sin cirugía, con resultados que hablan por sí solos.</p>
-                            <div class="service-features">
-                                <span class="feature-tag">Botox</span>
-                                <span class="feature-tag">Ác. Hialurónico</span>
-                                <span class="feature-tag">Lifting</span>
-                            </div>
-                            <a href="#contacto" class="btn-primary btn-sm">Reservar</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Card 6: Masajes & Estrés -->
-                <div class="service-card-flip reveal-card">
-                    <div class="service-card-inner">
-                        <div class="service-card-front">
-                            <div class="service-image service-image-gradient gradient-masaje">
-                                <div class="gradient-icon">🧘</div>
+                        <!-- Burbuja 5: Rejuvenecimiento -->
+                        <div class="sv-bubble reveal-card" id="svBubble4">
+                            <div class="sv-orbit">
+                                <div class="sv-circle-outer">
+                                    <div class="sv-circle-inner">
+                                        <img src="images/service_6.png" alt="Rejuvenecimiento Facial" loading="lazy">
+                                    </div>
+                                </div>
+                                <span class="sv-icon">💆</span>
                             </div>
-                            <div class="service-overlay">
-                                <div class="service-icon-front">🧘</div>
-                                <h3 class="service-title-front">Masajes & Tratamiento del Estrés</h3>
+                            <h3 class="sv-name">Rejuvenecimiento<br><small>Facial</small></h3>
+                            <div class="sv-panel">
+                                <p class="sv-desc">Ácido hialurónico, Botox, hilos tensores y lifting. Luce más joven
+                                    sin cirugía, con resultados naturales y duraderos.</p>
+                                <div class="sv-tags">
+                                    <span class="sv-tag">Botox</span>
+                                    <span class="sv-tag">Ác. Hialurónico</span>
+                                    <span class="sv-tag">Lifting</span>
+                                </div>
+                                <a href="#contacto" class="btn-primary btn-sm sv-cta">Agendar cita</a>
                             </div>
                         </div>
-                        <div class="service-card-back glass-card">
-                            <div class="service-icon-back">🧘</div>
-                            <h3 class="service-title-back">Masajes & Tratamiento del Estrés</h3>
-                            <p class="service-description">Masajes descontracturantes, relajantes y terapéuticos. Combate el estrés crónico y la tensión muscular con técnicas probadas para tu bienestar total.</p>
-                            <div class="service-features">
-                                <span class="feature-tag">Descontracturante</span>
-                                <span class="feature-tag">Anti-Estrés</span>
-                                <span class="feature-tag">Relajación</span>
-                            </div>
-                            <a href="#contacto" class="btn-primary btn-sm">Reservar</a>
-                        </div>
-                    </div>
-                </div>
 
-            </div><!-- end grid -->
-        </div>
+                        <!-- Burbuja 6: Masajes -->
+                        <div class="sv-bubble reveal-card" id="svBubble5">
+                            <div class="sv-orbit">
+                                <div class="sv-circle-outer">
+                                    <div class="sv-circle-inner">
+                                        <img src="images/service_7.png" alt="Masajes" loading="lazy">
+                                    </div>
+                                </div>
+                                <span class="sv-icon">🧘</span>
+                            </div>
+                            <h3 class="sv-name">Masajes &amp;<br><small>Tratamiento del Estrés</small></h3>
+                            <div class="sv-panel">
+                                <p class="sv-desc">Masajes descontracturantes, relajantes y terapéuticos. Combate el
+                                    estrés crónico y la tensión muscular con técnicas probadas.</p>
+                                <div class="sv-tags">
+                                    <span class="sv-tag">Descontracturante</span>
+                                    <span class="sv-tag">Anti-Estrés</span>
+                                    <span class="sv-tag">Relajación</span>
+                                </div>
+                                <a href="#contacto" class="btn-primary btn-sm sv-cta">Agendar cita</a>
+                            </div>
+                        </div>
+
+                        <!-- Burbuja 7: Detox Iónico -->
+                        <div class="sv-bubble reveal-card" id="svBubble6">
+                            <div class="sv-orbit">
+                                <div class="sv-circle-outer">
+                                    <div class="sv-circle-inner">
+                                        <img src="images/service_5.png" alt="Desintoxicación Iónica" loading="lazy">
+                                    </div>
+                                </div>
+                                <span class="sv-icon">⚡</span>
+                            </div>
+                            <h3 class="sv-name">Desintoxicación<br><small>Iónica</small></h3>
+                            <div class="sv-panel">
+                                <p class="sv-desc">Baño de pies con ionización que elimina toxinas, mejora la
+                                    circulación y revitaliza el sistema inmune de forma natural.</p>
+                                <div class="sv-tags">
+                                    <span class="sv-tag">Detox</span>
+                                    <span class="sv-tag">Circulación</span>
+                                    <span class="sv-tag">Inmunidad</span>
+                                </div>
+                                <a href="#contacto" class="btn-primary btn-sm sv-cta">Agendar cita</a>
+                            </div>
+                        </div>
+
+                    </div><!-- /.sv-track -->
+                </div><!-- /.sv-track-mask -->
+
+                <button class="sv-arrow sv-next" id="svNext" aria-label="Siguiente servicio">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div><!-- /.sv-carousel-wrap -->
+
+            <!-- Dots de paginación -->
+            <div class="sv-dots" id="svDots" role="tablist" aria-label="Navegación de servicios"></div>
+
+        </div><!-- /.container -->
     </section>
 
     <!-- =========================================================
@@ -354,7 +419,8 @@
                         <span class="gradient-text">que mereces</span>
                     </h2>
                     <p class="why-body">
-                        En Ygeia creemos que la salud y la belleza son derechos, no privilegios. Cada tratamiento está diseñado pensando en tu caso único, con rigor médico y un toque de arte.
+                        En Ygeia creemos que la salud y la belleza son derechos, no privilegios. Cada tratamiento está
+                        diseñado pensando en tu caso único, con rigor médico y un toque de arte.
                     </p>
                     <div class="why-points">
                         <div class="why-point">
@@ -382,7 +448,8 @@
                             <div class="why-icon">❤️</div>
                             <div>
                                 <h4>Seguimiento Post-Tratamiento</h4>
-                                <p>Te acompañamos en cada etapa. Tu recuperación y satisfacción son nuestra prioridad.</p>
+                                <p>Te acompañamos en cada etapa. Tu recuperación y satisfacción son nuestra prioridad.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -409,7 +476,8 @@
                         </div>
                         <div class="why-quote">
                             <span class="quote-mark">"</span>
-                            <p>Invertir en tu salud hoy es el mejor regalo que puedes hacerte. Tu cuerpo te lo agradecerá toda la vida.</p>
+                            <p>Invertir en tu salud hoy es el mejor regalo que puedes hacerte. Tu cuerpo te lo
+                                agradecerá toda la vida.</p>
                             <div class="quote-author">— Equipo Ygeia</div>
                         </div>
                     </div>
@@ -425,14 +493,19 @@
         <div class="container">
             <div class="urgency-card glass-card">
                 <div class="urgency-badge">🔥 Oferta Limitada</div>
-                <h2 class="urgency-title">Primera Consulta con <span class="gradient-text">Evaluación Gratuita</span></h2>
+                <h2 class="urgency-title">Primera Consulta con <span class="gradient-text">Evaluación Gratuita</span>
+                </h2>
                 <p class="urgency-text">
-                    Tu primera vez en Ygeia incluye una evaluación médica integral sin costo. <strong>Cupos limitados cada mes</strong> — ¡No dejes pasar esta oportunidad de comenzar tu transformación!
+                    Tu primera vez en Ygeia incluye una evaluación médica integral sin costo. <strong>Cupos limitados
+                        cada mes</strong> — ¡No dejes pasar esta oportunidad de comenzar tu transformación!
                 </p>
                 <div class="urgency-ctas">
                     <a href="#contacto" class="btn-primary btn-glow btn-large">
-                        Quiero mi Cita Gratuita
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        ¡Quiero mi Cita Gratuita!
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                     </a>
                     <span class="urgency-note">✅ Sin compromisos · Confidencial · Profesional</span>
                 </div>
@@ -456,7 +529,8 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card glass-card reveal-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Me hice el tratamiento de rejuvenecimiento con ácido hialurónico y los resultados son increíbles. Natural, profesional y sin dolor. ¡Definitivamente regreso!"</p>
+                    <p class="testimonial-text">"Me hice el tratamiento de rejuvenecimiento con ácido hialurónico y los
+                        resultados son increíbles. Natural, profesional y sin dolor. ¡Definitivamente regreso!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">M</div>
                         <div>
@@ -468,7 +542,9 @@
 
                 <div class="testimonial-card glass-card reveal-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Vine por los sueros vitamínicos y no podría estar más satisfecho. Siento una energía increíble y el equipo es sumamente profesional y atento. ¡Muy recomendado!"</p>
+                    <p class="testimonial-text">"Vine por los sueros vitamínicos y no podría estar más satisfecho.
+                        Siento una energía increíble y el equipo es sumamente profesional y atento. ¡Muy recomendado!"
+                    </p>
                     <div class="testimonial-author">
                         <div class="author-avatar">C</div>
                         <div>
@@ -480,7 +556,9 @@
 
                 <div class="testimonial-card glass-card reveal-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Mi acné era algo con lo que cargué años. En Ygeia me dieron un tratamiento personalizado y en 3 sesiones los cambios ya eran notorios. ¡Por fin tengo la piel que siempre quise!"</p>
+                    <p class="testimonial-text">"Mi acné era algo con lo que cargué años. En Ygeia me dieron un
+                        tratamiento personalizado y en 3 sesiones los cambios ya eran notorios. ¡Por fin tengo la piel
+                        que siempre quise!"</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">L</div>
                         <div>
@@ -492,7 +570,8 @@
 
                 <div class="testimonial-card glass-card reveal-card">
                     <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p class="testimonial-text">"Los masajes descontracturantes me cambiaron la vida. Llegué con un estrés brutal del trabajo y salí completamente renovado. Lo hago cada mes sin falta."</p>
+                    <p class="testimonial-text">"Los masajes descontracturantes me cambiaron la vida. Llegué con un
+                        estrés brutal del trabajo y salí completamente renovado. Lo hago cada mes sin falta."</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">A</div>
                         <div>
@@ -535,10 +614,13 @@
                         <span class="gradient-text">un aliado para tu vida</span>
                     </h2>
                     <p class="about-body">
-                        Ygeia nació de la convicción de que la medicina y la estética no son mundos separados. El bienestar integral — sentirte bien por dentro y reflejarlo hacia afuera — es lo que nos mueve cada día.
+                        Ygeia nació de la convicción de que la medicina y la estética no son mundos separados. El
+                        bienestar integral — sentirte bien por dentro y reflejarlo hacia afuera — es lo que nos mueve
+                        cada día.
                     </p>
                     <p class="about-body">
-                        Nuestro equipo de profesionales médicos certificados combina años de experiencia clínica con las técnicas estéticas más modernas, siempre con un enfoque humano, ético y personalizado.
+                        Nuestro equipo de profesionales médicos certificados combina años de experiencia clínica con las
+                        técnicas estéticas más modernas, siempre con un enfoque humano, ético y personalizado.
                     </p>
                     <div class="about-values">
                         <div class="about-value">
@@ -564,6 +646,70 @@
     </section>
 
     <!-- =========================================================
+         GOOGLE CALENDAR — AGENDA TU CITA ONLINE
+    ========================================================= -->
+    <section class="calendar-section reveal-section" id="cita">
+        <div class="container">
+            <div class="section-header reveal-section">
+                <div class="section-tag">&#x1F4C5; Agenda Online</div>
+                <h2 class="section-title">
+                    Agenda tu cita
+                    <span class="gradient-text">directamente aquí</span>
+                </h2>
+                <p class="section-subtitle">
+                    Selecciona el día y la hora que mejor se adapte a ti. Confirmación inmediata, sin llamadas ni esperas.
+                </p>
+            </div>
+            <!-- Procedure selector -->
+            <div class="calendar-procedure-wrap reveal-section">
+                <div class="form-group calendar-procedure-group">
+                    <label for="procedimientoCita">¿Para qué procedimiento deseas agendar?</label>
+                    <select id="procedimientoCita" name="procedimientoCita">
+                        <option value="">— Selecciona un procedimiento —</option>
+                        <option>Medicina General</option>
+                        <option>Medicina Ocupacional</option>
+                        <option>Sueros &amp; Terapia IV</option>
+                        <option>Limpieza Facial</option>
+                        <option>Tratamiento de Acné</option>
+                        <option>Retiro de Lunares</option>
+                        <option>Aclaramiento de Piel</option>
+                        <option>Rejuvenecimiento Facial (Botox / Hilos)</option>
+                        <option>Masajes &amp; Tratamiento del Estrés</option>
+                        <option>Desintoxicación Iónica</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+            </div>
+            <div class="calendar-map-container">
+                <div class="calendar-wrap">
+                    <!-- Google Calendar Appointment Scheduling begin -->
+                    <iframe
+                        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0g0FLJJAU8M-59W4zENvRjshCutoVl5JNspTTHc_KtsQcipAoPst594MrPf56uU_UIYutKUSP8?gv=true"
+                        style="border: 0"
+                        width="100%"
+                        height="650"
+                        frameborder="0"
+                        title="Agendar cita en Ygeia"
+                    ></iframe>
+                    <!-- end Google Calendar Appointment Scheduling -->
+                </div>
+                <div class="map-wrap">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.4436394880825!2d-78.54662316460754!3d-0.2683564185782822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d599649a5ee437%3A0xf95008538924c508!2sYgeia!5e0!3m2!1ses!2sec!4v1776707729999!5m2!1ses!2sec" 
+                        width="100%" 
+                        height="650" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Ubicación de Ygeia">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
          CTA FINAL
     ========================================================= -->
     <section class="cta-section reveal-section" id="contacto">
@@ -576,7 +722,8 @@
                     <span class="gradient-text">te está esperando</span>
                 </h2>
                 <p class="cta-subtitle">
-                    No esperes a "mañana". El mejor momento para cuidar tu salud y tu imagen <strong>es ahora</strong>. Agenda tu consulta y da el primer paso hacia el cambio que siempre quisiste.
+                    No esperes a "mañana". El mejor momento para cuidar tu salud y tu imagen <strong>es ahora</strong>.
+                    Agenda tu consulta y da el primer paso hacia el cambio que siempre quisiste.
                 </p>
 
                 <div class="contact-form-wrap glass-card">
@@ -595,39 +742,45 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="telefono">Teléfono / WhatsApp</label>
-                                <input type="tel" id="telefono" name="telefono" placeholder="+58 000 000 0000">
+                                <input type="tel" id="telefono" name="telefono" placeholder="+593 000 000 0000">
                             </div>
                             <div class="form-group">
                                 <label for="servicio">Servicio de interés</label>
                                 <select id="servicio" name="servicio">
-                                    <option value="">Seleccionar servicio</option>
+                                    <option value="">— Seleccionar servicio —</option>
                                     <option>Medicina General</option>
                                     <option>Medicina Ocupacional</option>
-                                    <option>Sueros & Terapia IV</option>
+                                    <option>Sueros &amp; Terapia IV</option>
                                     <option>Limpieza Facial</option>
                                     <option>Tratamiento de Acné</option>
                                     <option>Retiro de Lunares</option>
                                     <option>Aclaramiento de Piel</option>
-                                    <option>Rejuvenecimiento (Botox/Hilos)</option>
-                                    <option>Masajes & Estrés</option>
+                                    <option>Rejuvenecimiento Facial (Botox / Hilos)</option>
+                                    <option>Masajes &amp; Tratamiento del Estrés</option>
+                                    <option>Desintoxicación Iónica</option>
                                     <option>Otro</option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="mensaje">Mensaje (opcional)</label>
-                            <textarea id="mensaje" name="mensaje" rows="3" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                            <textarea id="mensaje" name="mensaje" rows="3"
+                                placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
                         </div>
                         <button type="submit" class="btn-primary btn-glow btn-large btn-full" id="submitBtn">
                             Enviar Solicitud de Cita
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
                         </button>
                         <p class="form-privacy">🔒 Tu información es 100% confidencial y segura.</p>
                     </form>
                     <div class="form-success" id="formSuccess" style="display:none;">
                         <div class="success-icon">✅</div>
                         <h3>¡Solicitud enviada!</h3>
-                        <p>Gracias por contactarnos. Nos comunicaremos contigo en las próximas horas para confirmar tu cita.</p>
+                        <p>Gracias por contactarnos. Nos comunicaremos contigo en las próximas horas para confirmar tu
+                            cita.</p>
                     </div>
                 </div>
             </div>
@@ -647,14 +800,23 @@
                     </div>
                     <p class="footer-tagline">Salud · Estética · Bienestar integral</p>
                     <div class="footer-social">
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <a href="https://www.instagram.com/ygeia_uio/" class="social-link" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
                         </a>
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <a href="https://www.facebook.com/share/1CXFtS8i8N/" class="social-link" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
                         </a>
-                        <a href="https://wa.me/58000000000" class="social-link" aria-label="WhatsApp">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        <a href="https://wa.me/999843164" class="social-link" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -670,7 +832,7 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4 class="footer-col-title">Estética</h4>
+                    <h4 class="footer-col-title">Estética & Bienestar</h4>
                     <ul class="footer-links">
                         <li><a href="#servicios">Botox</a></li>
                         <li><a href="#servicios">Ácido Hialurónico</a></li>
@@ -678,6 +840,7 @@
                         <li><a href="#servicios">Lifting Facial</a></li>
                         <li><a href="#servicios">Retiro de Lunares</a></li>
                         <li><a href="#servicios">Masajes Terapéuticos</a></li>
+                        <li><a href="#servicios">Baño Iónico Detox</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -685,19 +848,19 @@
                     <ul class="footer-contact">
                         <li>
                             <span>📍</span>
-                            <span>Tu dirección aquí, Ciudad</span>
+                            <span>Av. Cardenal de la Torre & Solanda, Quito</span>
                         </li>
                         <li>
                             <span>📞</span>
-                            <span>+58 000 000 0000</span>
+                            <span>+593 99 984 3164</span>
                         </li>
                         <li>
                             <span>📧</span>
-                            <span>contacto@ygeia.com</span>
+                            <span>ygeia2022@gmail.com</span>
                         </li>
                         <li>
                             <span>🕐</span>
-                            <span>Lun–Vie: 8am–6pm<br>Sáb: 9am–2pm</span>
+                            <span>Lun–Vie: 9am–7pm<br>Sáb: 8am–2pm</span>
                         </li>
                     </ul>
                 </div>
@@ -714,9 +877,12 @@
 
     <!-- Back to top -->
     <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
     </button>
 
     <script src="script.js"></script>
 </body>
+
 </html>
